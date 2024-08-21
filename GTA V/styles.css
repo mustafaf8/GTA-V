@@ -39,7 +39,7 @@ header {
     color: black;
     transform: scale(1.1) ;
 }
-body { /*layer 0*/ /*panaromik pd*/
+body { /*layer 0*/ /*panaromik map*/
     background-image: url('assets/853454.jpg');/*bizim en dip katmanımız body'dir bu yüzden body'nin arkasına layer atamayı*/
     background-repeat: no-repeat;
     background-size: cover;
