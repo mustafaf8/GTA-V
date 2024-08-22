@@ -10,6 +10,7 @@ var audioList = [
 
 var currentIndex = 0;
 var music = document.getElementById("backgroundMusic");
+var waveContainer = document.querySelector('.wave-container');
 
 document.getElementById('revealButton').addEventListener('click', function() {
     music.play();
@@ -21,8 +22,10 @@ document.getElementById('revealButton').addEventListener('click', function() {
 document.getElementById('pauseButton').addEventListener('click', function() {
     if (music.paused) {
         music.play();
+        waveContainer.classList.remove('paused');
     } else {
         music.pause();
+        waveContainer.classList.add('paused');
     }
 });
 
@@ -31,24 +34,3 @@ document.getElementById('nextButton').addEventListener('click', function() {
     music.src = audioList[currentIndex];
     music.play();
 });
-
-
-// document.getElementById("slide").addEventListener("click", function() {
-//     var wrapper = document.querySelector(".wrapper");
-    
-
-//     var currentScrollPosition = wrapper.scrollLeft;
-    
-
-//     var cardWidth = document.querySelector(".card").offsetWidth;
-//     var gap = parseInt(getComputedStyle(wrapper).gap);
-    
-
-//     var newScrollPosition = currentScrollPosition + cardWidth + gap;
-    
-
-//     wrapper.scrollTo({
-//         left: newScrollPosition,
-//         behavior: "smooth" // Yumuşak kaydırma
-//     });
-// });
