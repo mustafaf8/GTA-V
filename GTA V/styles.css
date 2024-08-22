@@ -39,7 +39,7 @@ header {
     color: black;
     transform: scale(1.1) ;
 }
-body { /*layer 0*/ /*panaromik map*/
+body { /*layer 0*/ /*panaromik pd*/
     background-image: url('assets/853454.jpg');/*bizim en dip katmanımız body'dir bu yüzden body'nin arkasına layer atamayı*/
     background-repeat: no-repeat;
     background-size: cover;
@@ -57,12 +57,13 @@ body { /*layer 0*/ /*panaromik map*/
     position: fixed;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     z-index: 998;
     transition: opacity 2s ease-in-out;
     
 
 }
-.layer2{ /*layer 2*/ /*kırmızı tulumlu iki kişi*/
+.layer2{ /*layer 2*/ /*gol manzarası*/
     background-image: url('assets/714106.png');/*buda zoomdan sonra ortaya çıkacak olan layere*/
     background-color: black;/*değişmesi gerekecek*/
     width:100%;
@@ -72,7 +73,7 @@ body { /*layer 0*/ /*panaromik map*/
     background-size: cover;
     z-index: 997;
     opacity: 0; /* Layer 2 başlangıçta görünmez */
-    transition: opacity 10s ease-in-out;
+    transition: opacity 1s ease-in-out;
 }
 #revealButton {
     position: absolute;
@@ -93,7 +94,7 @@ body { /*layer 0*/ /*panaromik map*/
     background-color: #5c24e0;
 }
 .top-space {
-    margin-top: 10%;
+    margin-top: 100px;
 }
 .layer-content {
     display: flex;
@@ -136,7 +137,7 @@ body { /*layer 0*/ /*panaromik map*/
     flex-shrink: 0;
     width: 100%; 
     background-color: black;
-    border-radius: 20px;
+    border-radius: 15px;
     text-align: center;
 }
 .image-side img {
@@ -144,24 +145,18 @@ body { /*layer 0*/ /*panaromik map*/
     border: solid 20px black; 
     border-radius: 20px;
 }
-
 ::-webkit-scrollbar {
-    width: 40px;
-    height: 12px;
+    width: 8px;
+    height: 10px;
     background-color: none; 
 }
-
 ::-webkit-scrollbar-thumb {
     background-color: #FF5733;
-    border-radius: 10px;
-   
+    border-radius: 10px;  
 }
-
 ::-webkit-scrollbar-thumb:hover {
     background-color: #FFC300; /
 }
-
-
 ::-webkit-scrollbar-thumb:active {
     background-color: #DAF7A6; 
 }
@@ -172,10 +167,10 @@ body { /*layer 0*/ /*panaromik map*/
 .pragraf {
     color: antiquewhite;
 }
-.slide-button {
+.continu-button {
     position: relative;
-    left: 45%;
-    margin-top: 40px;
+    left: 5%;
+    height: 30px;
     background-color: rgb(97, 8, 180);
     border-style: none;
     border-radius: 15px;
@@ -183,8 +178,9 @@ body { /*layer 0*/ /*panaromik map*/
     padding: 5px 20px;
     font-style: italic;
     font-weight: 700;
+    
 }
-.slide-button:hover {
+.continu-button:hover {
     transition: 0.3s ease;
     background-color: rgb(68, 10, 122);
 }
@@ -201,9 +197,208 @@ body { /*layer 0*/ /*panaromik map*/
     transition: 0.3s ease;
     background-color: rgb(68, 10, 122);
 }
+.buttons {
+    width: 15%;
+    display: flex;
+    margin: 0 5px;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+}
+.last-buttons {
+    margin-left: 10%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    display: flex;
+    align-items: center;
+}
 .small-icon {
     display: flex;
     align-items: center;
     width: 20px;
     height: 20px;
+}
+.wave-container {
+    display: flex;
+    align-items: flex-end;
+    height: 25px;
+    width: 30px;
+    justify-content: space-around;
+    overflow: hidden;
+}
+.wave {
+    width: 5px;
+    height: 15px;
+    background-color: #ff0000;
+    animation: wave 1s infinite ease-in-out;
+    border-radius: 5px;
+}
+.wave:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.wave:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.wave:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.wave:nth-child(4) {
+    animation-delay: 0.6s;
+}
+.paused .wave {
+    animation-play-state: paused;
+}
+@keyframes wave {
+    0% {
+        height: 20%;
+    }
+    30% {
+        height: 60%;
+    }
+    60% {
+        height: 100%;
+    }
+    100% {
+        height: 60%;
+    }
+}
+footer p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    color: bisque;
+    background-color: rgba(34, 31, 31, 0);
+    position: absolute;
+    top: 95%;
+    z-index: 1000;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 850px) {
+    /* Ekran genişliği 600px ve altı olan cihazlar için özel stiller buraya yazılır */
+    body { /*layer 0*/ /*panaromik pd*/
+        background-image: url('assets/853454.jpg');/*bizim en dip katmanımız body'dir bu yüzden body'nin arkasına layer atamayı*/
+        background-size: cover;
+        background-position: center;
+        width:100%;
+        height: 100vh;
+        overflow-y: scroll;
+       
+    }
+    .layer1{ /*layer 1*/ /*panaromik pd*/
+        background-image: url('assets/853454.jpg'); /*bu layer body üstüne atıldı ki z-index sıralamında en altta yapabilmek için*/
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        position: fixed;
+        background-size: cover;
+        background-position: center;
+        z-index: 998;
+        transition: opacity 2s ease-in-out;
+        overflow-y: scroll;
+    }
+    .layer2{ /*layer 2*/ /*gol manzarası*/
+        background-image: url('assets/714106.png');/*buda zoomdan sonra ortaya çıkacak olan layere*/
+        background-color: black;/*değişmesi gerekecek*/
+        width:100%;
+        height: 100vh;
+        position: fixed;
+        background-position: center;
+        background-size: cover;
+        z-index: 997;
+        opacity: 0; /* Layer 2 başlangıçta görünmez */
+        transition: opacity 1s ease-in-out;
+        overflow-y: scroll;
+    }
+    .layer-content {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        gap: 10%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .wrapper {
+        width: 95%;
+        display: flex;
+        gap: 20px;
+        border-radius: 20px;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+    }
+    .text-side {
+        width: 100%;
+        background-color: rgb(0, 0, 0);
+        padding: 20px;
+        border-radius: 20px;
+        scroll-snap-align: center;
+        box-sizing: border-box;
+        flex-shrink: 0; 
+    }
+    .wrapper2 {
+        width: 95%;
+        display: flex;
+        gap: 20px;
+        border-radius: 20px;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        justify-content: flex-start;
+    }
+    .image-side  {
+        scroll-snap-align: center;
+        box-sizing: border-box;
+        flex-shrink: 0;
+        width: 100%; 
+        background-color: black;
+        border-radius: 20px;
+        text-align: center;
+    }
+    .image-side img {
+        width: 100%; 
+        border: solid 10px black; 
+        border-radius: 20px;
+    }
+    .buttons {
+        width: 35%;
+        display: flex;
+        margin: 0 5px;
+        padding: 5px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .last-buttons {
+        margin-top: 3%;
+        margin-bottom: 15%;
+        display: flex;
+        align-items: center;
+        position: relative;
+        left: 0%;
+    }
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 5px;
+        background-color: none; 
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: #FF5733;
+        border-radius: 10px;  
+    }
+
 }
