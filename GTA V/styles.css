@@ -22,6 +22,9 @@ header {
     width: 55px;
     height: 45px;
 }
+.navbar {
+    display: flex;
+}
 .navbar ul {
     display: flex;
     justify-content: center;
@@ -39,14 +42,14 @@ header {
     color: black;
     transform: scale(1.1) ;
 }
-body { /*layer 0*/ /*panaromik pd*/
-    background-image: url('assets/853454.jpg');/*bizim en dip katmanımız body'dir bu yüzden body'nin arkasına layer atamayı*/
+body { /*layer 0*/ 
+    background-color: black;/*bizim en dip katmanımız body'dir bu yüzden body'nin arkasına layer atamayı*/
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     width:100%;
     height: 100vh;
-   
+   overflow-y: hidden;
 }
 .layer1{ /*layer 1*/ /*panaromik pd*/
     background-image: url('assets/853454.jpg'); /*bu layer body üstüne atıldı ki z-index sıralamında en altta yapabilmek için*/
@@ -59,9 +62,7 @@ body { /*layer 0*/ /*panaromik pd*/
     background-size: cover;
     background-position: center;
     z-index: 998;
-    transition: opacity 2s ease-in-out;
-    
-
+    transition: opacity 3s ease-in-out;
 }
 .layer2{ /*layer 2*/ /*gol manzarası*/
     background-image: url('assets/714106.png');/*buda zoomdan sonra ortaya çıkacak olan layere*/
@@ -73,7 +74,7 @@ body { /*layer 0*/ /*panaromik pd*/
     background-size: cover;
     z-index: 997;
     opacity: 0; /* Layer 2 başlangıçta görünmez */
-    transition: opacity 1s ease-in-out;
+    transition: opacity 7s ease-in-out;
 }
 #revealButton {
     position: absolute;
@@ -104,6 +105,7 @@ body { /*layer 0*/ /*panaromik pd*/
     margin-left: 5%;
     margin-right: 5%;
 }
+/* ---------------------------------------------- */
 .wrapper {
     width: 50%;
     display: flex;
@@ -264,7 +266,8 @@ body { /*layer 0*/ /*panaromik pd*/
         height: 60%;
     }
 }
-footer p {
+footer{
+    overflow-y: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -278,20 +281,10 @@ footer p {
   }
 
 
-
-
-
-
-
-
-
-
-
-
 @media (max-width: 850px) {
     /* Ekran genişliği 600px ve altı olan cihazlar için özel stiller buraya yazılır */
     body { /*layer 0*/ /*panaromik pd*/
-        background-image: url('assets/853454.jpg');/*bizim en dip katmanımız body'dir bu yüzden body'nin arkasına layer atamayı*/
+        background-color: black;/*bizim en dip katmanımız body'dir bu yüzden body'nin arkasına layer atamayı*/
         background-size: cover;
         background-position: center;
         width:100%;
@@ -322,7 +315,7 @@ footer p {
         background-size: cover;
         z-index: 997;
         opacity: 0; /* Layer 2 başlangıçta görünmez */
-        transition: opacity 1s ease-in-out;
+        transition: opacity 7s ease-in-out;
         overflow-y: scroll;
     }
     .layer-content {
@@ -399,5 +392,83 @@ footer p {
         background-color: #FF5733;
         border-radius: 10px;  
     }
-
+    
 }
+@media (max-width:600px) {
+    
+     .hamburger {
+    
+         display: block;
+         position: absolute;
+         left: 10px;
+         z-index: 99999;
+           
+     }
+     .navbar {
+        display: none;
+        flex-direction: column;
+        background-color: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 25%;
+        width: 100px;
+        padding-top: 0px;
+        text-align: left;
+        border-radius: 0;
+      }
+    
+}
+@media (max-width:600px) {
+    .logo {
+        display: flex;
+        justify-content: end;
+        position: absolute;
+        left: 50%;
+        
+    }
+    
+    .hamburger {
+        display: block;
+        position: absolute;
+        left: 10px;
+        z-index: 9999;
+        background-color: #ff6262;
+        border-style: none;
+        color:rgb(63, 0, 146);
+        border-radius: 5px;
+        width: 35px;
+        height: 20px;
+        z-index: 9999;
+          
+    }
+    
+    .navbar  ul{
+       display: flex;
+       flex-direction: column;
+       background-color: #ff6262;
+       position: fixed;
+       top: 0%;
+       left: 0%;
+       width: 30px;
+       height: 200px;
+       padding-top: 10px;
+       padding-right: 20%;
+       margin-top: 70px;
+       text-align: left;
+       border-radius: 0;
+       color: rgb(255, 0, 0);
+       border-radius: 0px 0px 40px 0px;
+       z-index: 9999;
+     }
+     .navbar ul li:hover {
+        transform: translate(10px,0);
+        transform: scale(1.2);
+     }
+   
+}
+@media (min-width: 600px) {
+    .hamburger {
+      display: none;
+    }
+  }
